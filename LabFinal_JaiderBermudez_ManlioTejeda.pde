@@ -1,5 +1,5 @@
-import processing.sound.*;
-SoundFile file;
+//import processing.sound.*;
+//SoundFile file,no;
 boolean sw=false,block,inicio=false,cogioMon, swPosMon, sw2=false,  paranorap=true, imagepasar=true, rotarmitad=false,  SubYbaj, dm=true, perdio, RocioTeAmo1, swPuente, SYB;
 float x=500, y=396, i=0;
 PImage []personaje= new PImage[14]; 
@@ -13,8 +13,9 @@ void setup() {
    size(450, 550);   
     inicio();
    
-    //file = new SoundFile(this, "Evil Laugh.mp3");
-    //file.play();
+    //file = new SoundFile(this, "Troll2.mp3");
+   // file.play();
+    //no= new SoundFile(this, "Evil Laugh.mp3");
 }
 float p=(PI/2);
 
@@ -94,7 +95,7 @@ void draw() {
       if (j==x2+x3-55+1 || j==x2+x3-55+2 ) {
        
         rotarmitad=true;
-        cantMonTot=1;//int (random(3, 5));
+        cantMonTot=int (random(3, 5));
         
       }
       if (rotarmitad==true & dm==true) {
@@ -241,11 +242,12 @@ void draw() {
   }
   if (perdio==true ) {
        textSize(40);
+      // no.play();
      fill(255);
      
       background(fondo[3]);
        textSize(16);
-      
+       //file.stop();
        text("Puentes acertados: "+puente, 140, 360);
          
           text("Empanadas totales: "+mone, 140, 380);
@@ -264,9 +266,7 @@ void draw() {
               fill(78, 102, 33);
   } 
      pun=(puente*100)+(mone*20);   
-     println(maypun);
-        println(cogioMon);
-           println("h:"+h);
+   
   
     }
 }
@@ -336,11 +336,11 @@ void bosconia(int b, int a, int h, int x0, int x1, int x2, int x3) {
              fill(255);
           text("Puentes: "+puente, 2, 15);
            text("Empanadas : "+mone, 2, 32);
-            text("Puntuacion : "+pun, 2, 52);
+            text("Puntuacion : "+pun, 2, 45);
   fill(78, 102, 33);
 }
 void inicio(){
-   fondo[1]=loadImage("fondo.png");  fondo[2]=loadImage("fondo10.jpg");fondo[3]=loadImage("fin.png");
+   fondo[1]=loadImage("fondo.png");  fondo[2]=loadImage("fondo10.jpg");fondo[3]=loadImage("GO.png");
   background(fondo[1]);
   Moneda=loadImage("empanada.png");
                    personaje[1]=loadImage("man3.png"); personaje[2]=loadImage("man3.png"); personaje[3]=loadImage("man3.png"); personaje[4]=loadImage("man3.png");
@@ -364,9 +364,11 @@ void inicio(){
                                                                    textSize(20);
                                                                  text("precione la barra espaciadora",width/2,255);
                                                                  }
+                                                                   
 } 
 void Todoinicio(){
-   background(fondo[1]);      
+   background(fondo[1]); 
+
       paranorap=true;     
                 x1=x3;  sw=false; sw2=false;      
         paranorap=true;   imagepasar=true;   rotarmitad=false;   SubYbaj=false;      dm=true;   swPuente=false;        
